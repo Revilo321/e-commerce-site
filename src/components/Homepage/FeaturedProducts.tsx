@@ -1,4 +1,6 @@
 import React from 'react';
+import { GenericProducts } from './GenericProducts';
+import { GenericProductHeader } from './GenericProductHeader';
 
 const FeaturedProducts: React.FC = () => {
   // Fetch or provide the list of featured products
@@ -10,26 +12,12 @@ const FeaturedProducts: React.FC = () => {
 
   return (
     <section>
-      <div className="pb-5">
-        <p className="text-center text-sm font-semibold">OLIVER</p>
-        <h2 className="text-center text-xl font-bold">FEATURED PRODUCTS</h2>
-        <div className="flex justify-center pt-1">
-          <div className=" bg-pink-200 w-10 h-px"></div>
-        </div>
-        <p className="text-center text-sm font-medium">
-          Here is an overview of all featured items
-        </p>
-      </div>
-      <div className="grid grid-cols-3 gap-4">
-        {featuredProducts.map((product) => (
-          <div key={product.id} className="  mx-10">
-            <div className="h-20 w-full bg-black" />
-            <h3 className="text-sm pt-1">{product.name}</h3>
-            <p className="text-xs">{product.price}</p>
-            {/* Additional product details */}
-          </div>
-        ))}
-      </div>
+      <GenericProductHeader
+        header="OLIVER"
+        secondHeader="FEATURED PRODUCTS"
+        text="Here is an overview of all featured items"
+      />
+      <GenericProducts products={featuredProducts} />
     </section>
   );
 };

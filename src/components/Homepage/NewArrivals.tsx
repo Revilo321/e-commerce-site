@@ -1,4 +1,6 @@
 import React from 'react';
+import { GenericProducts } from './GenericProducts';
+import { GenericProductHeader } from './GenericProductHeader';
 
 const NewArrivals: React.FC = () => {
   // Fetch or provide the list of new arrivals
@@ -10,16 +12,12 @@ const NewArrivals: React.FC = () => {
 
   return (
     <section>
-      <h2>New Arrivals</h2>
-      <div className="grid grid-cols-3 gap-4">
-        {newArrivals.map((product) => (
-          <div key={product.id}>
-            <h3>{product.name}</h3>
-            <p>{product.price}</p>
-            {/* Additional product details */}
-          </div>
-        ))}
-      </div>
+      <GenericProductHeader
+        header="OLIVER"
+        secondHeader="NEW ARRIVALS"
+        text="Overview of all new arrivals"
+      />
+      <GenericProducts products={newArrivals} />
     </section>
   );
 };

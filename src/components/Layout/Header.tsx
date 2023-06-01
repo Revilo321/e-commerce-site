@@ -2,14 +2,12 @@ import Link from 'next/link';
 import React from 'react';
 
 const Header: React.FC = () => {
-
   //TODO: Make an array of links instead of hard coding each one.
   return (
-    <header className="bg-gray-900 text-white py-4">
-      <div className="container mx-auto flex items-center justify-between">
-        <h1 className="text-2xl font-bold">My E-commerce Store</h1>
+    <header className="bg-gray-200 py-4">
+      <div className="container mx-auto flex items-center justify-around">
         <nav>
-          <ul className="flex space-x-4">
+          <ul className="flex space-x-10">
             <li>
               <Link href="/">Home</Link>
             </li>

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Sidebar: React.FC = () => {
-
   //TODO: Figure out actual categories
   return (
     <aside className="bg-gray-100 p-4">

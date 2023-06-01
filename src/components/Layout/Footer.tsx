@@ -1,15 +1,16 @@
 import React from 'react';
 
 const Footer: React.FC = () => {
-
   //TODO: Improve Footer
   return (
-    <footer className="bg-gray-200 text-gray-700 py-4">
+    <footer className="bg-gray-200 text-gray-700 py-4 fixed bottom-0 w-full">
       <div className="container mx-auto text-center">
+        <p className="text-sm">Oliver Andersen E-Commerce build</p>
         <p className="text-sm">
-          &copy; 2023 My E-commerce Store. All rights reserved.
+          <a href="mailto:oliver.andersen12@hotmail.com">
+            Contact: oliver.andersen12@hotmail.com
+          </a>
         </p>
-        <p className="text-sm">Contact: info@example.com</p>
       </div>
     </footer>
   );

@@ -11,7 +11,7 @@ const Header: React.FC = () => {
   //TODO: Make an array of links instead of hard coding each one.
 
   const routes = [
-    { path: 'Home', href: '/' },
+    { path: 'Home', href: '/homepage' },
     { path: 'Products', href: '/products' },
     { path: 'Account', href: '/account' },
   ];

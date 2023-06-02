@@ -3,7 +3,7 @@ import React from 'react';
 const Footer: React.FC = () => {
   //TODO: Improve Footer
   return (
-    <footer className="bg-gray-200 text-gray-700 py-4">
+    <footer className="bg-gray-600 text-white py-4">
       <div className="container mx-auto text-center">
         <p className="text-sm">Oliver Andersen E-Commerce build</p>
         <p className="text-sm">

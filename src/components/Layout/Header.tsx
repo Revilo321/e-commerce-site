@@ -8,15 +8,13 @@ const monts = Montserrat_Alternates({
 });
 
 const Header: React.FC = () => {
-  //TODO: Make an array of links instead of hard coding each one.
-
   const routes = [
     { path: 'Home', href: '/homepage' },
     { path: 'Products', href: '/products' },
     { path: 'Account', href: '/account' },
   ];
   return (
-    <header className={`bg-gray-200 py-4 ${monts.className}`}>
+    <header className={`shadow-md py-4 ${monts.className}`}>
       <div className="container mx-auto flex items-center justify-around">
         <nav>
           <ul className="flex space-x-10">

@@ -5,17 +5,40 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
+  const { sort } = req.query;
   if (req.method === 'GET') {
     try {
-      const products = await Product.findAll();
+      let products;
+      if (sort === 'desc') {
+        products = await Product.findAll({
+          order: [['created_at', 'DESC']],
+          limit: 3,
+        });
+        //TODO: Improve the logic below
+      } else if (req.query.specialOffers === '') {
+        products = await Product.findAll({
+          where: {
+            isSpecialOffer: true,
+          },
+          limit: 3,
+        });
+      } else {
+        products = await Product.findAll();
+      }
       res.json(products);
     } catch (error) {
       res.status(500).json({ error: 'Internal server error' });
     }
   } else if (req.method === 'POST') {
-    const { name, description, price } = req.body;
+    const { name, description, price, image_url, isSpecialOffer } = req.body;
     try {
-      const product = await Product.create({ name, description, price });
+      const product = await Product.create({
+        name,
+        description,
+        price,
+        image_url,
+        isSpecialOffer,
+      });
       res.status(201).json(product);
     } catch (error) {
       res.status(500).json({ error: 'Internal server error' });

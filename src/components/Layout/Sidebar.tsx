@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Sidebar: React.FC = () => {
@@ -7,16 +8,16 @@ const Sidebar: React.FC = () => {
       <h2 className="text-lg font-semibold mb-2">Categories</h2>
       <ul>
         <li>
-          <a href="/products?category=electronics">Electronics</a>
+          <Link href="/products?category=electronics">Electronics</Link>
         </li>
         <li>
-          <a href="/products?category=clothing">Clothing</a>
+          <Link href="/products?category=clothing">Clothing</Link>
         </li>
         <li>
-          <a href="/products?category=home">Home</a>
+          <Link href="/products?category=home">Home</Link>
         </li>
         <li>
-          <a href="/products?category=beauty">Beauty</a>
+          <Link href="/products?category=beauty">Beauty</Link>
         </li>
       </ul>
     </aside>

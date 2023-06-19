@@ -2,8 +2,8 @@ import { GenericProductHeader } from '@/components/Homepage/GenericProductHeader
 import { GenericProducts } from '@/components/Homepage/GenericProducts';
 import { Product } from '@/types/productType';
 
-const Products = () => {
-  const products: Product[] = [
+const Products = ({ products }: { products: Product[] }) => {
+  /* const products: Product[] = [
     {
       id: 1,
       name: 'Coke zero',
@@ -40,7 +40,7 @@ const Products = () => {
       imageUrl: '/coke.jpg',
     },
     // Add more products as needed
-  ];
+  ]; */
 
   return (
     <section className="pt-14">
@@ -53,5 +53,18 @@ const Products = () => {
     </section>
   );
 };
+
+export async function getServerSideProps() {
+  // Fetch products from the API
+  const response = await fetch('http://localhost:3000/api/products');
+  const products = await response.json();
+
+  // Pass the fetched products as props
+  return {
+    props: {
+      products,
+    },
+  };
+}
 
 export default Products;

@@ -28,7 +28,7 @@ export const GenericProducts = ({ products }: GenericProductsProps) => {
           >
             {product.image_url && (
               <img
-                className="max-w-full"
+                className="max-w-xs sm:max-w-full"
                 src={product.image_url}
                 alt="productimage"
               />

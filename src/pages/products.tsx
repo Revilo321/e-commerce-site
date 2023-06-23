@@ -39,9 +39,12 @@ const Products = () => {
         secondHeader="All Products"
         text="Here you can find all of our products"
       />
-      <p className="pl-10 text-sm">
-        Viser {products.length} ud af {totalProducts} produkter
-      </p>
+      <div className="flex justify-center pb-5">
+        <p className="text-sm">
+          Viser {products.length} ud af {totalProducts} produkter
+        </p>
+      </div>
+      <div className="h-px bg-gray-200" />
       <GenericProducts products={products} />
     </section>
   );

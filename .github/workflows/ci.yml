@@ -16,11 +16,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install npm
-        uses: npm/action-setup@v2.2.4
-        with:
-          version: 7
-
       - name: Set up Node
         uses: actions/setup-node@v3
         with:

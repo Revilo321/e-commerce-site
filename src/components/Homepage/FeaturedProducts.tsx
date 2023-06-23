@@ -7,9 +7,7 @@ const FeaturedProducts: React.FC = () => {
   useEffect(() => {
     const fetchSpecialOffers = async () => {
       try {
-        const response = await fetch(
-          'http://localhost:3000/api/products?specialOffers',
-        );
+        const response = await fetch('/api/products/special-offers');
         const data = await response.json();
         setSpecialOffers(data);
       } catch (error) {

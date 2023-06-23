@@ -1,5 +1,4 @@
 import { Product } from '@/types/productType';
-import Image from 'next/image';
 import React from 'react';
 import { useRouter } from 'next/router';
 
@@ -16,7 +15,7 @@ export const GenericProducts = ({ products }: GenericProductsProps) => {
       query: { productId: product.id, ...product },
     });
   };
-  console.log(products);
+
   return (
     <div className="py-10 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 mx-auto max-w-screen-lg place-items-center">
       {products.map((product) => (

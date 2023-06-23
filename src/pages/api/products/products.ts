@@ -1,30 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import Product from '../../../db/models/product'; // Import the Product model
+import Product from 'db/models/product';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  const { sort } = req.query;
   if (req.method === 'GET') {
     try {
-      let products;
-      if (sort === 'desc') {
-        products = await Product.findAll({
-          order: [['created_at', 'DESC']],
-          limit: 3,
-        });
-        //TODO: Improve the logic below
-      } else if (req.query.specialOffers === '') {
-        products = await Product.findAll({
-          where: {
-            isSpecialOffer: true,
-          },
-          limit: 3,
-        });
-      } else {
-        products = await Product.findAll();
-      }
+      const products = await Product.findAll();
       res.json(products);
     } catch (error) {
       res.status(500).json({ error: 'Internal server error' });

@@ -9,9 +9,7 @@ const NewArrivals: React.FC = () => {
   useEffect(() => {
     const fetchNewArrivals = async () => {
       try {
-        const response = await fetch(
-          'http://localhost:3000/api/products?sort=desc',
-        );
+        const response = await fetch('/api/products/recent');
         const data = await response.json();
         setNewArrivals(data);
       } catch (error) {
@@ -21,7 +19,7 @@ const NewArrivals: React.FC = () => {
 
     fetchNewArrivals();
   }, []);
-  console.log(newArrivals);
+
   return (
     <section>
       <GenericProductHeader

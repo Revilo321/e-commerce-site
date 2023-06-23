@@ -1,36 +1,10 @@
 import { GenericProductHeader } from '@/components/Homepage/GenericProductHeader';
 import { GenericProducts } from '@/components/Homepage/GenericProducts';
-import useLazyLoading from '@/hooks/useLazyLoading';
-import { Product } from '@/types/productType';
-import { useEffect, useState } from 'react';
+import { ProductContext } from '@/context/ProductContext';
+import { useContext } from 'react';
 
 const Products = () => {
-  const [totalProducts, setTotalProducts] = useState<number>(0);
-  const batchSize = 4;
-
-  const fetchProducts = async (batch: number) => {
-    const response = await fetch(
-      `/api/products/lazy-loading?batch=${batch}&batchSize=${batchSize}`,
-    );
-    const data = await response.json();
-    return data;
-  };
-
-  const fetchTotalProducts = async () => {
-    try {
-      const response = await fetch('/api/products/products');
-      const data = await response.json();
-      setTotalProducts(data.length);
-    } catch (error) {
-      console.error('Error fetching products', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchTotalProducts();
-  }, []);
-
-  const products = useLazyLoading(fetchProducts, batchSize) as Product[];
+  const { products, totalProducts } = useContext(ProductContext);
 
   return (
     <section className="pt-14">

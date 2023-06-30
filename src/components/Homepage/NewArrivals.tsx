@@ -3,7 +3,6 @@ import { GenericProducts } from './GenericProducts';
 import { GenericProductHeader } from './GenericProductHeader';
 
 const NewArrivals: React.FC = () => {
-  // Fetch or provide the list of new arrivals
   const [newArrivals, setNewArrivals] = useState([]);
 
   useEffect(() => {

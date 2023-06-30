@@ -6,7 +6,6 @@ interface ProductContextProps {
   products: Product[];
   fetchProducts: () => Promise<void>;
   totalProducts: number;
-  // Other product-related actions and state
 }
 export type ProviderProps = {
   children: React.ReactNode;

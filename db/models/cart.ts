@@ -1,5 +1,5 @@
 import { DataTypes, Model, Optional } from 'sequelize';
-import sequelize from 'db/database'; // Replace with your Sequelize instance
+import sequelize from 'db/database';
 import Product from './product';
 
 interface CartItemAttributes {
@@ -24,9 +24,6 @@ class CartItem
   public created_at?: Date;
   public updated_at?: Date;
 
-  // Add any associations or additional methods here
-
-  // Timestamps are enabled by default in Sequelize
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
@@ -67,7 +64,6 @@ CartItem.init(
   },
 );
 
-// Fetches cart items for a given user ID
 export async function getCartItems(user_id: string) {
   const cartItems = await CartItem.findAll({
     where: {
@@ -75,7 +71,6 @@ export async function getCartItems(user_id: string) {
     },
   });
 
-  // Fetch associated product information for each cart item
   const cartItemsWithProducts = await Promise.all(
     cartItems.map(async (cartItem: any) => {
       const product = await Product.findByPk(cartItem.product_id);

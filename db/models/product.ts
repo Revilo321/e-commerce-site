@@ -15,10 +15,6 @@ class Product extends Model<ProductAttributes> implements ProductAttributes {
   public price!: number;
   public image_url!: string;
   public isSpecialOffer!: boolean;
-
-  // You can define additional methods or associations here
-
-  // Define the table name explicitly
   static tableName = 'products';
 }
 

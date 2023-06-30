@@ -1,4 +1,3 @@
-// Import necessary Sequelize modules
 import { Model, DataTypes } from 'sequelize';
 import { sequelize } from '../database';
 

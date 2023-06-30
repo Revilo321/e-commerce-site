@@ -1,6 +1,6 @@
 import { ProductDetail } from '@/components/Products/ProductDetail';
 import { Product } from '@/types/productType';
-import { useRouter } from 'next/router'; // Assuming you have a Product type defined
+import { useRouter } from 'next/router';
 
 export default function ProductDetailPage() {
   const router = useRouter();

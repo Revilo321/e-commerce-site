@@ -1,6 +1,7 @@
 import { GenericProductHeader } from '@/components/Homepage/GenericProductHeader';
 import { GenericProducts } from '@/components/Homepage/GenericProducts';
 import { ProductContext } from '@/context/ProductContext';
+import withAuth from '@/hooks/withAuth';
 import { useContext } from 'react';
 
 const Products = () => {
@@ -24,4 +25,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default withAuth(Products);

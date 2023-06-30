@@ -10,7 +10,6 @@ export default async function handler(
       throw new Error('Method Not Allowed');
     }
     const { batch, batchSize } = req.query;
-
     const products = await Product.findAll({
       limit: Number(batchSize),
       offset: Number(batch) * Number(batchSize),

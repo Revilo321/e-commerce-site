@@ -1,5 +1,6 @@
 import FeaturedProducts from '@/components/Homepage/FeaturedProducts';
 import NewArrivals from '@/components/Homepage/NewArrivals';
+import withAuth from '@/hooks/withAuth';
 
 const Homepage = () => {
   return (
@@ -14,4 +15,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default withAuth(Homepage);
